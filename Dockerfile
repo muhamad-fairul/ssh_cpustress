@@ -18,10 +18,10 @@ ENV NOTVISIBLE="in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
 WORKDIR /stress
-RUN wget http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.34.tar.xz
-RUN tar xvf stress-ng-0.09.34.tar.xz
-WORKDIR stress-ng-0.09.34
-RUN make
+#RUN wget http://kernel.ubuntu.com/~cking/tarballs/stress-ng/stress-ng-0.09.34.tar.xz
+RUN apt-get install -y stress-ng
+#WORKDIR stress-ng-0.09.34
+#RUN make
 
 #cpu stress test
 RUN uptime > $STRESS
