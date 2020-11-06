@@ -27,7 +27,7 @@ RUN apt-get install -y stress-ng
 RUN uptime > $STRESS
 RUN stress-ng --cpu 4 --timeout 60s --metrics-brief >> $STRESS
 RUN uptime >> $STRESS
-RUN stress-ng --disk 2 --timeout 60s --metrics-brief >> $STRESS
+#RUN stress-ng --disk 2 --timeout 60s --metrics-brief >> $STRESS
 
 #memory stress test
 RUN stress-ng --vm 2 --vm-bytes 1G --timeout 60s >> $STRESS
